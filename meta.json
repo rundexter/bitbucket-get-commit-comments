@@ -40,5 +40,6 @@
             "title":"Author URL"
         }
     ],
+    "icon": "bitbucket",
     "title": "Bitbucket Get Commit Comments" /* Required.A display name for the module */
 }
