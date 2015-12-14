@@ -94,15 +94,17 @@ module.exports = {
      */
     run: function(step, dexter) {
 
-        var auth = this.authParams(dexter),
-            owner = step.input('owner').first(),
-            repo_slug = step.input('repo_slug').first(),
-            revision = step.input('revision').first();
+        var auth = this.authParams(dexter)
+        // check params.
+        if (!this.checkCorrectParams(auth, step)) return;
+
+        var owner = step.input('owner').first().trim(),
+            repo_slug = step.input('repo_slug').first().trim(),
+            revision = step.input('revision').first().trim();
 
         var uriLink = 'repositories/' + owner + '/' + repo_slug + '/commit/' + revision + '/comments';
 
-        // check params.
-        if (!this.checkCorrectParams(auth, step)) return;
+        
         //send API request
         this.apiRequest('get', uriLink, {}, auth, function (error, responce, body) {
 
