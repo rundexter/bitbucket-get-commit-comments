@@ -40,6 +40,9 @@
             "title":"Author URL"
         }
     ],
+    "providers": [{
+        "name": "bitbucket"
+    }],
     "icon": "bitbucket",
     "title": "Bitbucket Get Commit Comments" /* Required.A display name for the module */
 }
