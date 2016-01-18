@@ -6,9 +6,9 @@ var request = require('request').defaults({
 });
 
 var pickInputs = {
-        'owner': 'owner',
-        'repo_slug': 'repo_slug',
-        'revision': 'revision'
+        'owner': { key: 'owner', validate: { req: true } },
+        'repo_slug': { key: 'repo_slug', validate: { req: true } },
+        'revision': { key: 'revision', validate: { req: true } }
     },
     pickOutputs = {
         '-': {
